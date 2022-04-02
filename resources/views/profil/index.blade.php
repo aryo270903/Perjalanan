@@ -41,23 +41,10 @@
       </tr>
   @endforeach
     </tbody>
-  </table>
-  <div class="row">
+    <div class="row">
       <a href="{{ route('print')}}" class="btn btn-sm btn-danger"> Print</a>
   </div>
-    <ul class="pagination">
-      <li class="page-item disabled">
-        <a class="page-link" href="#" tabindex="-1">Previous</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item active">
-        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
+  </table>
   </nav>
   <div class="footer py-5 border-top text-center">
     <div class="container">

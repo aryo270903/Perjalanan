@@ -17,10 +17,8 @@ class ProfilController extends Controller
      */
     public function index()
     {
-        
-        $data= User::where('role', 'user')->get();
+        $data = User::all();
         return view('profil.index',compact('data'));
-        
     }
     public function create()
     {

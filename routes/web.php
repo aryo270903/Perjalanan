@@ -13,23 +13,27 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', function () {
-    return view('dashboard.home');
+
+
+Route::get("/login", "AuthController@login")->name('login');
+Route::post("/postlogin", "AuthController@postlogin");
+Route::get("/logout", "AuthController@logout");
+Route::get("/register", "AuthController@register");
+Route::post("/postregister", "AuthController@postregister");
+
+Route::group(['middleware' => ['auth', 'revalidate']], function () {
+    Route::get('/home', function () {
+        return view('dashboard.home');
+    });
+
+    Route::get('/', function () {
+        return view('layouts.app');
+    });
+
+    Route::resource("/perjalanan", "PeralananController");
+
+    Route::get('/profil', 'ProfilController@index');
+    Route::get('/profil/edit/{id}', 'ProfilController@edit');
+    Route::put('/profil/update/{id}', 'ProfilController@update');
+    Route::get('/pdf', 'ProfilController@cetak_pdf')->name('print');
 });
-
-Route::get('/', function () {
-    return view('layouts.app');
-});
-
-Route::get("/login","AuthController@login");
-Route::post("/postlogin","AuthController@postlogin");
-Route::get("/logout","AuthController@logout");
-Route::get("/register","AuthController@register");
-Route::post("/postregister","AuthController@postregister");
-
-Route::resource("/perjalanan","PeralananController");
-
-Route::get('/profil','ProfilController@index');
-Route::get('/profil/edit/{id}', 'ProfilController@edit');
-Route::put('/profil/update/{id}','ProfilController@update');
-Route::get('/pdf', 'ProfilController@cetak_pdf')->name('print');
