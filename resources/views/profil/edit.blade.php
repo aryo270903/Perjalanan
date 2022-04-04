@@ -140,7 +140,7 @@
             {{-- final alamat --}}
             <div class="form-group">
                 <label class="form-label">Alamat</label>
-                <textarea class="form-control" name="alamat" id="alamat">{{ $data->alamat ?? '' }}</textarea>
+                <textarea class="form-control" name="alamat" id="alamat">{{ $edit->alamat}}</textarea>
             </div>
             {{-- end alamat --}}
             <div class="form-group">
@@ -149,7 +149,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 d-flex justify-content-end">
-                    <a href="/perjalanan" class="btn btn-danger">Kembali</a>
+                    <a href="/profil/edit/{{ auth()->user()->id }}" class="btn btn-danger">Batal</a>
                 </div>
                 <div class="col-md-6 ">
                     <button type="submit" class="btn btn-primary">

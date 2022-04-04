@@ -24,7 +24,7 @@ Route::post("/postregister", "AuthController@postregister");
 Route::group(['middleware' => ['auth', 'revalidate']], function () {
     Route::get('/home', function () {
         return view('dashboard.home');
-    });
+    })->name('home');
 
     Route::get('/', function () {
         return view('layouts.app');
@@ -32,8 +32,14 @@ Route::group(['middleware' => ['auth', 'revalidate']], function () {
 
     Route::resource("/perjalanan", "PeralananController");
 
-    Route::get('/profil', 'ProfilController@index');
+   
     Route::get('/profil/edit/{id}', 'ProfilController@edit');
     Route::put('/profil/update/{id}', 'ProfilController@update');
+
+});
+
+Route::group(['middleware' => ['auth', 'role:admin','revalidate']], function () {
+    Route::get('/profil', 'ProfilController@index');
     Route::get('/pdf', 'ProfilController@cetak_pdf')->name('print');
+
 });

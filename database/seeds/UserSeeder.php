@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
     	      // insert data ke table pegawai menggunakan Faker
     		DB::table('users')->insert([
                 'nik' => '923919132',
-    			'name' => $faker->name,
+    			'name' => 'admin',
                 'notlp' => '0913293129',
     			'email' => 'admin@gmail.com',
                 'alamat' => $faker->address,
