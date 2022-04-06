@@ -15,17 +15,16 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
 
-                <div class="col-md-12 aos-init aos-animate" style="position: relative;" data-aos="fade-up">
-
-                    <img src="{{ asset('assets/images/landing_1.png') }}" alt="Image" class="img-fluid img-absolute">
-
-                    <div class="row mb-4">
-                        <div class="col-lg-4 mr-auto">
-                            <h1>Lihat Dan Edit Profil Anda</h1>
-                        </div>
+            <div class="col-md-6 aos-init aos-animate" style="position: relative;" data-aos="fade-up">
+                <div class="row mb-4">
+                    <div class="col-lg-4 mr-auto">
+                        <h1>Lihat Dan Edit Profil Anda</h1>
                     </div>
-
                 </div>
+            </div>
+            <div class="col-md-6">
+                <img src="{{ asset('assets/images/34.svg') }}" alt="Image" class="img-fluid">
+            </div>
             </div>
         </div>
     </div>
