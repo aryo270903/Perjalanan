@@ -39,7 +39,6 @@ class PeralananController extends Controller
             'lokasi'=>$request->lokasi,
             'suhu_tubuh'=>$request->suhu_tubuh,
             'id_user'=>Auth::user()->id
-            
         ];
         Peralanan::create($data);
         return redirect()->route('perjalanan.index');
